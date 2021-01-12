@@ -67,7 +67,7 @@ function checkAnswer(){
     // Grab the returned answer from the calculateAnswer function (returns an array)
     let answer = calculateAnswer();
     // Create true or false variable to use in the if statement (can just use the condition)
-    let isCorrect = userAnswer === Math.round(answer[0]);
+    let isCorrect = userAnswer === Math.floor(answer[0]);
     if (isCorrect){
         alert('Hey! You got it right!');
         incrementScore();
