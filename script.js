@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
 // generate two random numbers between 1-25
 function runGame(gameType){
     document.querySelector('#answer-box').value = "";
+    document.querySelector('#answer-box').focus();
 // floor rounds down to nearest int
 // random gives number between 0-1
   let num1 = Math.floor(Math.random()*25)+1;
