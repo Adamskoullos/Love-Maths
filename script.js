@@ -26,14 +26,28 @@ function runGame(gameType){
 // random gives number between 0-1
   let num1 = Math.floor(Math.random()*25)+1;
   let num2 = Math.floor(Math.random()*25)+1;
+  // from the above event listener depending on which button is clicked, depends on which
+  // question function is called.  This then calls the calculateAnswer function.
+
+  // The below if statement has nested if/elses for the division and subtraction gameTypes
+  // This is to re-run the function if num1 is the bigger number.  This ensures that num1
+  // is always larger than num2 so the answer is always a positive number.
   if (gameType === 'addition'){
       displayAdditionQuestion(num1, num2);
   } else if (gameType === 'subtract'){
-      displaySubtractionQuestion(num1, num2);  
+      if (num1 < num2){
+          runGame('subtract');
+      } else {
+          displaySubtractionQuestion(num1, num2);
+      }  
   } else if (gameType === 'multiply'){
       displayMultiplyQuestion(num1, num2);  
   } else if (gameType === 'division'){
-      displayDivisionQuestion(num1, num2);  
+      if (num1 < num2){
+          runGame('division');
+      } else {
+          displayDivisionQuestion(num1, num2);
+      }  
   } else {
       alert(`Unkown game type ${gameType}`);
       throw `Unkown game type ${gameType}, aborting!`;
