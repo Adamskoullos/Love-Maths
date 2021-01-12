@@ -30,7 +30,7 @@ function runGame(gameType){
   // question function is called.  This then calls the calculateAnswer function.
 
   // The below if statement has nested if/elses for the division and subtraction gameTypes
-  // This is to re-run the function if num1 is the bigger number.  This ensures that num1
+  // This is to re-run the function if num2 is the bigger number.  This ensures that num1
   // is always larger than num2 so the answer is always a positive number.
   if (gameType === 'addition'){
       displayAdditionQuestion(num1, num2);
